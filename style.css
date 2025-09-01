@@ -1,0 +1,166 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+  width: 100vw;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background: #002b5c;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+header p {
+  text-align: center;
+}
+
+nav {
+  background: #004080;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+nav a {
+  color: #fff;
+  padding: 12px 20px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: #0066cc;
+}
+
+/* Grid de dos columnas */
+.poster-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h2 {
+  color: #004080;
+  margin-top: 0;
+}
+
+.poster-img {
+  max-width: 100%;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+.references {
+  font-size: 0.9rem;
+}
+
+footer {
+  background: #002b5c;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+p {
+  text-align: justify;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+  box-sizing: border-box;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .poster-grid {
+    grid-template-columns: 1fr;
+    margin: 10px;
+    padding: 0 5px;
+  }
+  header h1 {
+    font-size: 1.3rem;
+  }
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    width: 100vw;
+  }
+  nav a {
+    text-align: center;
+    border-top: 1px solid #003366;
+    font-size: 1.1rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 0;
+  }
+  section {
+    padding: 12px;
+  }
+}
+
+/* Responsive nav improvements */
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+  }
+  .poster-grid {
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding: 0 2px;
+    width: 100vw;
+  }
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100vw;
+    padding: 0;
+  }
+  nav a {
+    text-align: center;
+    padding: 16px 0;
+    border-top: 1px solid #003366;
+    font-size: 1.1rem;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  section {
+    padding: 8px;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+}
