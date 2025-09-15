@@ -1,3 +1,8 @@
+@media (min-width: 601px) {
+  .author-link:hover {
+    cursor: pointer;
+  }
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -329,7 +334,7 @@ section#introduction > p,
 
 #main-nav {
   position: static;
-  min-height: 80px;
+  min-height: 55px;
   display: flex;
   align-items: center;
   top: 0;
