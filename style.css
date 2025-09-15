@@ -289,13 +289,55 @@ section#introduction > p,
   }
   header h1 {
     flex-wrap: nowrap;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     gap: 8px;
   }
   .download-btn img {
     height: 22px;
   }
+  #main-nav {
+    position: relative;
+    width: 100vw;
+    padding: 0;
+    margin-bottom: 25px;
+  }
+  #nav-toggle {
+    display: flex !important;
+  }
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100vw;
+    background: #004080;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    margin-top: 0;
+    padding-bottom: 10px;
+  }
+  #nav-links.show {
+    display: flex !important;
+  }
+  #nav-links a {
+    text-align: center;
+    padding: 16px 0;
+    border-top: 1px solid #003366;
+    font-size: 1.1rem;
+    width: 100vw;
+    box-sizing: border-box;
+  }
 }
+
+#main-nav {
+  position: static;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  top: 0;
+  z-index: 100;
+  background: #004080;
+}
+
+
 
 /* Centrar figura 3 */
 .figure3 {
@@ -311,4 +353,14 @@ section#introduction > p,
   text-decoration: underline;
   text-decoration-color: #fff !important;
   text-underline-position: under;
+}
+
+/* Sticky nav solo en PC */
+@media (min-width: 601px) {
+  #main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #004080;
+  }
 }
