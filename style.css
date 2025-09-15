@@ -20,6 +20,11 @@ header {
 header h1 {
   margin: 0;
   font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 header p {
@@ -70,6 +75,7 @@ section {
 h2 {
   color: #004080;
   margin-top: 0;
+  text-align: center;
 }
 
 .poster-img {
@@ -104,7 +110,7 @@ h2 {
 }
 
 footer {
-  background: #002b5c;
+  background: #012a5a;
   color: #fff;
   text-align: center;
   padding: 15px;
@@ -121,6 +127,96 @@ video {
   display: block;
   margin: 0 auto 20px auto;
   box-sizing: border-box;
+}
+
+/* Grid para videos */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.video-grid video {
+  aspect-ratio: 16/9;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #000;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.video-cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-label {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(0, 43, 92, 0.308);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.video-caption {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.98rem;
+  color: #222;
+  text-align: justify;
+  background: #f3f3f3;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.intro-figure {
+  margin: 18px 0 10px 0;
+  text-align: center;
+}
+
+.intro-figure img {
+  max-width: 100%;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.intro-caption {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.98rem;
+  color: #222;
+  text-align: justify;
+  background: #f3f3f3;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+#introduction p {
+  text-align: justify;
+}
+
+#introduction > p {
+  text-align: justify;
+}
+
+section#introduction p,
+section#introduction > p,
+#introduction {
+  text-align: justify !important;
 }
 
 /* Responsive */
@@ -170,6 +266,7 @@ video {
     align-items: stretch;
     width: 100vw;
     padding: 0;
+    margin-bottom: 25px;
   }
   nav a {
     text-align: center;
@@ -180,8 +277,25 @@ video {
     box-sizing: border-box;
   }
   section {
-    padding: 8px;
-    width: 100vw;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 10px;
+    width: auto;
     box-sizing: border-box;
   }
+  header h1 {
+    flex-wrap: nowrap;
+    font-size: 1.1rem;
+    gap: 8px;
+  }
+  .download-btn img {
+    height: 22px;
+  }
+}
+
+.designer-link:hover {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #fff !important;
+  text-underline-position: under;
 }

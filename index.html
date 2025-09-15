@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ALS Detection Poster</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="UDG.ico">
 </head>
 <body>
 
   <header>
-    <h1>ALS Detection using Frequency Analysis with Machine Learning</h1>
-    <p>Alejandro Díaz-Montes-de-Oca, Ricardo A. Salido-Ruiz, Stewart R. Santos-Arce</p>
+    <h1 style="display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;">
+      ALS Detection using Frequency Analysis with Machine Learning
+    </h1>
+    <p>Alejandro Díaz-Montes-de-Oca, Ricardo A. Salido-Ruiz and Stewart R. Santos-Arce</p>
     <p>University of Guadalajara - LAEDC 2025</p>
   </header>
 
@@ -41,7 +44,13 @@
         Amyotrophic Lateral Sclerosis (ALS) is a neurodegenerative disease that affects motor neurons, causing progressive muscle weakness
          and loss of voluntary motor control [1]. This directly impacts critical functions such as speech and facial expressions [1]. 
          Current diagnostic methods, based on clinical evaluations and specialized testing (electromyography, MRI) have a 10~16 months 
-         delay, which hinders early interventions and reduces patient survival. [1].
+         delay, which hinders early interventions and reduces patient survival.
+        <div class="intro-figure">
+          <img src="introduction.png" alt="Current diagnostic methods" class="poster-img">
+          <figcaption class="intro-caption">
+            Figure 1. Delayed diagnosis of ALS impacts patients' life expectancy.
+          </figcaption>
+        </div>
         Faced with this challenge, there is a need to develop accessible and non-invasive tools for early diagnosis. Recent studies [2], 
         [3] have explored facial motion analysis using Machine Learning (ML), demonstrating its potential. However, these studies have 
         only focused on time-domain analysis. This work proposes an innovative method that combines frequency-domain facial signal 
@@ -57,25 +66,59 @@
        confirmed diagnosis and 11 healthy controls) performing nine orofacial diadochokinesia tasks [4]. Using the MediaPipe® framework, 
        440 facial markers were initially extracted for each video frame. These signals were transformed into polar coordinates (radius 
        r and angle θ), taking the nasal tip as the reference origin.
-       For spectral analysis, coherence was computed in the 0.1–5 Hz band between pairs of symmetrical bilateral markers, a range that 
-       encompasses the characteristic frequencies of orofacial movements during speech. Subsequently, the set was reduced to 24 marker 
-       pairs per task, using a feature importance analysis, selecting those with the greatest discriminatory power between groups.
-       Six ML architectures were implemented for binary classification (ALS vs. control): Support Vector Machine, Random Forest, Decision 
-       Trees, Multilayer Neural Networks, K-Nearest Neighbors, and Logistic Regression. Each model was independently evaluated for the nine 
-       diadochokinesis tasks [4] using cross-validation, reporting performance metrics such as accuracy, sensitivity, and specificity.
-
-
       </p>
+
+
+      <div class="video-grid">
+        <div class="video-cell">
+          <span class="video-label">a)</span>
+          <video controls muted>
+            <source src="mesh-.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+          </video>
+        </div>
+        <div class="video-cell">
+          <span class="video-label">b)</span>
+          <video controls muted>
+            <source src="points-.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+          </video>
+        </div>
+        <div class="video-cell">
+          <span class="video-label">c)</span>
+          <video controls muted>
+            <source src="radios-.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+          </video>
+        </div>
+        <div class="video-cell">
+          <span class="video-label">d)</span>
+          <video controls muted>
+            <source src="thetas-.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+          </video>
+        </div>
+      </div>
+      <figcaption class="video-caption">
+        Figure 2: Landmark extraction from videos. a) Face mesh estimated by MediaPipe, b) Calculation of radius and theta signals, c) Example of radius signal, d) Example of theta signal
+      </figcaption>
+
+        <p>
+          For spectral analysis, coherence was computed in the 0.1–5 Hz band between pairs of symmetrical bilateral markers, a range that 
+          encompasses the characteristic frequencies of orofacial movements during speech. Subsequently, the set was reduced to 24 marker 
+          pairs per task, using a feature importance analysis, selecting those with the greatest discriminatory power between groups.
+          Six ML architectures were implemented for binary classification (ALS vs. control): Support Vector Machine, Random Forest, Decision 
+          Trees, Multilayer Neural Networks, K-Nearest Neighbors, and Logistic Regression. Each model was independently evaluated for the nine 
+          diadochokinesis tasks [4] using cross-validation, reporting performance metrics such as accuracy, sensitivity, and specificity.
+            <div class="intro-figure">
+              <img src="coherence.png" alt="Coherence analysis" class="poster-img">
+              <figcaption class="intro-caption">
+                Figure 3. Processing of facial markers: a) Extraction of the initial 440 markers, b) Coherence calculation between symmetric signals, c) Markers reduction.
+              </figcaption>
+            </div>
+        </p>
     </section>
 
-      <section id="videos">
-        <h2>Local Videos</h2>
-        <video width="480" height="240" controls>
-          <source src="video1.mp4" type="video/mp4">
-          Tu navegador no soporta el video.
-        </video>
-
-      </section>
     <section id="results">
       <h2>Results and Discussion</h2>
       <p>
@@ -107,10 +150,24 @@
         <li style="margin-bottom: 1em;">A. Bandini et al., <a href="https://ieeexplore.ieee.org/abstract/document/9177259" style="color:#0040ff; text-decoration:underline;">“A New Dataset for Facial Motion Analysis in Individuals With Neurological Disorders”</a>, Apr 2021.</li>
       </ol>
     </section>
+
+    <section id="download" style="text-align:center;">
+      <a href="https://drive.google.com/file/d/1Al7MT6a9txmScvWruUXXNZ6P0bnWBmbN/view?usp=sharing" target="_blank" class="download-btn" style="display:inline-flex; align-items:center; gap:8px; background:#004080; color:#fff; border-radius:6px; padding:8px 18px; font-size:1.08rem; font-weight:500; text-decoration:none; transition:background 0.2s;">
+        Download PDF
+        <img src="pdf.svg" alt="Download PDF" style="height:24px; width:auto; vertical-align:middle;">
+      </a>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 IEEE LAEDC | Designed by Alejandro Díaz</p>
+    <p style="text-align:center;">&copy; 2025 IEEE LAEDC</p>
+    <p style="text-align:center;">
+      <a href="https://www.linkedin.com/in/alejandrodiazmonstesdeoca/" class="designer-link" style="color:inherit; text-decoration:none;">Designed by Alejandro Díaz Montes de Oca</a>
+    </p>
+    <div style="display:flex; justify-content:center; align-items:center; gap:20px; margin-top:10px;">
+      <img src="EDS.png" alt="EDS logo" style="max-width:120px; height:auto;">
+      <img src="UDG.png" alt="UDG logo" style="max-width:120px; height:auto;">
+    </div>
   </footer>
 
   <script src="script.js"></script>
