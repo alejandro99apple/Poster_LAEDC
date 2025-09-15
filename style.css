@@ -82,6 +82,27 @@ h2 {
   font-size: 0.9rem;
 }
 
+.references ol {
+  list-style-type: none;
+  counter-reset: ref;
+  text-align: justify;
+}
+
+.references ol li {
+  counter-increment: ref;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.references ol li::before {
+  content: "[" counter(ref) "] ";
+  color: inherit;
+  font-weight: normal;
+  font-family: inherit;
+  position: absolute;
+  left: -2em;
+}
+
 footer {
   background: #002b5c;
   color: #fff;
