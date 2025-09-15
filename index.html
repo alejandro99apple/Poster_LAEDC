@@ -110,7 +110,7 @@
           Six ML architectures were implemented for binary classification (ALS vs. control): Support Vector Machine, Random Forest, Decision 
           Trees, Multilayer Neural Networks, K-Nearest Neighbors, and Logistic Regression. Each model was independently evaluated for the nine 
           diadochokinesis tasks [4] using cross-validation, reporting performance metrics such as accuracy, sensitivity, and specificity.
-            <div class="intro-figure">
+            <div class="figure3">
               <img src="coherence.png" alt="Coherence analysis" class="poster-img">
               <figcaption class="intro-caption">
                 Figure 3. Processing of facial markers: a) Extraction of the initial 440 markers, b) Coherence calculation between symmetric signals, c) Markers reduction.
@@ -123,13 +123,17 @@
       <h2>Results and Discussion</h2>
       <p>
         Comparative analysis of the ML algorithms revealed differentiated performance across the facial tasks evaluated. The highest average accuracy was obtained on the BIGSMILE task (86%), followed by PA (71%) and PATAKA (66%).
-      </p>
-      <img src="fig1.png" alt="Accuracy results figure" class="poster-img">
-      <p>Among the algorithms evaluated, K-Nearest Neighbors and Vector Machine stood out for their high accuracy
+        <div class="intro-figure">
+          <img src="results.png" alt="Results" class="poster-img">
+          <figcaption class="intro-caption">
+            Figure 4. Accuracy results for each task, using frequency analysis.
+          </figcaption>
+        </div>
+        Among the algorithms evaluated, K-Nearest Neighbors and Vector Machine stood out for their high accuracy
          (up to 90% in BIGSMILE). The remaining algorithms showed moderate accuracy. This variability in performance 
          suggests that selecting specific tasks and appropriate algorithms is crucial for optimizing ALS detection through 
          facial analysis.
-</p>
+      </p>
     </section>
 
     <section id="conclusions">
